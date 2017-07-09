@@ -29,3 +29,8 @@ mkinstalldirs
 *.gmo
 po/POTFILES
 *.valid
+tests
+test-driver
+*.log
+*.trs
+

@@ -13,7 +13,8 @@ kodb_so_CPPFLAGS = \
 	-I$(includedir) \
 	$(AM_CPPFLAGS)
 
-kodb_so_SOURCES = kodb.cc
+kodb_so_SOURCES = kodb.cc \
+	bson_class.cc
 
 kodb_so_LDADD = ${KoDB_LIBS}
 

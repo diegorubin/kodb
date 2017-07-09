@@ -10,10 +10,11 @@ AC_PROG_INSTALL
 AC_CONFIG_SRCDIR([lib])
 AC_CONFIG_MACRO_DIR([m4])
 
-PKG_CHECK_MODULES([KoDB],[sqlite3])
+PKG_CHECK_MODULES([KoDB],[libbson-1.0])
 
 AC_CONFIG_FILES([
 lib/Makefile
+tests/Makefile
 ])
 
 AC_OUTPUT(Makefile)

@@ -3,7 +3,8 @@ AUTOMAKE_OPTIONS = subdir-objects
 TESTS = tests
 check_PROGRAMS = tests
 tests_SOURCES = main.cc \
-	bson_test.cc
+	bson_test.cc \
+	database_test.cc
 
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS}
 
@@ -18,6 +19,8 @@ tests_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 tests_LDADD = $(top_builddir)/lib/kodb_so-bson_class.o \
+	$(top_builddir)/lib/kodb_so-document.o \
+	$(top_builddir)/lib/kodb_so-database.o \
 	${KoDB_LIBS} \
 	/usr/local/lib/libgtest.a
 

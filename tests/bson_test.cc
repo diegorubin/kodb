@@ -1,8 +1,6 @@
 #include <gtest/gtest.h>
 #include <bson_class.h>
 
-#include <iostream>
-
 TEST(Bson, GetValues) {
   Bson bson;
   bson.set_string("key", "teste");

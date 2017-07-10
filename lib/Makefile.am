@@ -14,7 +14,9 @@ kodb_so_CPPFLAGS = \
 	$(AM_CPPFLAGS)
 
 kodb_so_SOURCES = kodb.cc \
-	bson_class.cc
+	bson_class.cc \
+	database.cc \
+	document.cc
 
 kodb_so_LDADD = ${KoDB_LIBS}
 

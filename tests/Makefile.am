@@ -22,5 +22,7 @@ tests_LDADD = $(top_builddir)/lib/kodb_so-bson_class.o \
 	$(top_builddir)/lib/kodb_so-document.o \
 	$(top_builddir)/lib/kodb_so-database.o \
 	${KoDB_LIBS} \
-	/usr/local/lib/libgtest.a
+	/usr/local/lib/libgtest.a \
+	-lboost_system \
+	-lboost_filesystem
 

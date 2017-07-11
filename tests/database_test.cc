@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <database.h>
+#include <iostream>
 
 #include <boost/filesystem.hpp>
 
@@ -13,6 +14,16 @@ namespace {
     // is empty.
   
     DatabaseTest() {
+
+    }
+  
+    virtual ~DatabaseTest() {
+    }
+  
+    // If the constructor and destructor are not enough for setting up
+    // and cleaning up each test, you can define the following methods:
+  
+    virtual void SetUp() {
       std::string location = "/tmp/test-database";
       path p(location.c_str());
       std::ifstream *destiny = new std::ifstream(location);
@@ -20,18 +31,6 @@ namespace {
       {
         remove_all(p);
       }
-    }
-  
-    virtual ~DatabaseTest() {
-      // You can do clean-up work that doesn't throw exceptions here.
-    }
-  
-    // If the constructor and destructor are not enough for setting up
-    // and cleaning up each test, you can define the following methods:
-  
-    virtual void SetUp() {
-      // Code here will be called immediately after the constructor (right
-      // before each test).
     }
   
     virtual void TearDown() {
@@ -42,9 +41,10 @@ namespace {
     // Objects declared here can be used by all tests in the test case for Foo.
   };
   
-  TEST(Database, Create) {
+  TEST_F(DatabaseTest, Create) {
+
     Database *database = new Database("/tmp/test-database", "pass");
-    //ASSERT_TRUE(database->create());
+    ASSERT_TRUE(database->create());
   }
 
 }
